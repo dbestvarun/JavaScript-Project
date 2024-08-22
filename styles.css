@@ -54,8 +54,17 @@ h1 {
   background-color: #fff;
   padding: 10px 30px;
   border-radius: 8px;
+  text-align: center;
   color: #212121;
   text-decoration: none;
   border: 2px solid #212121;
   margin-top: 5px;
+}
+.project-link:hover{
+  background-color: blue;
+  opacity: 70%;
+  color: white;
+}
+.project-link:active{
+  background-color: blue;
 }
