@@ -13,6 +13,14 @@ calculate.addEventListener('submit',(e)=>{
     results.innerHTML = 'Please enter a valid weight!';
   }else{
     const bmi = (weight/((height*height)/10000)).toFixed(2);
-    results.innerHTML = `<span>${bmi}</span>`;
+    let health;
+    if(bmi<18.6){
+      health = "Under Weight";
+    }else if(bmi > 24.9){
+      health = "Overweight";
+    }else{
+      health = "Normal weight";
+    }
+    results.innerHTML = `<span>${bmi}. ${health}</span>`;
   }
 })
