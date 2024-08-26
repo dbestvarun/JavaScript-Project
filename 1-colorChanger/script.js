@@ -40,7 +40,7 @@ const displayColorCode = function () {
   // Convert each RGB value to a two-digit hexadecimal number
   const hexCode = `#${Number(rgbValues[1]).toString(16).padStart(2, '0')}${Number(rgbValues[2]).toString(16).padStart(2, '0')}${Number(rgbValues[3]).toString(16).padStart(2, '0')}`;
   
-  whatColor.innerHTML = `<br> The Code of current background is <b>${hexCode}</b>`;
+  whatColor.innerHTML = `<br> The HexCode of current background is <b>${hexCode}</b>`;
 };
 displayColorCode();
 
