@@ -33,8 +33,8 @@ const displayColorCode = function () {
 
   // Extract the RGB values using a regular expression
   const rgbValues = backgroundColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-  
-  
+
+
   // Convert each RGB value to a two-digit hexadecimal number
   const hexCode = `#${Number(rgbValues[1]).toString(16).padStart(2, '0')}${Number(rgbValues[2]).toString(16).padStart(2, '0')}${Number(rgbValues[3]).toString(16).padStart(2, '0')}`;
 
@@ -43,8 +43,8 @@ const displayColorCode = function () {
 
 //variable to hold the reference of setInterval so that it can be used in clearInterval.
 let intervalId;
-//Event listeners added to the buttons.
-document.querySelector('#start').addEventListener('click', function () {
+//Event listeners added to the button.
+document.querySelector('#colorSwitcher').addEventListener('click', function () {
   if (!intervalId) {
     intervalId = setInterval(() => {
       let nextColor = newColor();
@@ -52,13 +52,32 @@ document.querySelector('#start').addEventListener('click', function () {
       document.body.style.backgroundColor = nextColor;
       displayColorCode();
     }, 1000);
+    document.querySelector('#colorSwitcher').innerHTML = 'STOP';
+  } else {
+    clearInterval(intervalId);
+    intervalId = null;
+    document.querySelector('#colorSwitcher').innerHTML = 'START';
   }
 }, false);
 
-document.querySelector('#stop').addEventListener('click', function () {
-  if (intervalId) {
-    console.log("stopped.")
-    clearInterval(intervalId);
-    intervalId = null;
-  }
-}, false);
+// previously two button code 
+
+// document.querySelector('#start').addEventListener('click', function () {
+//   if (!intervalId) {
+//     intervalId = setInterval(() => {
+//       let nextColor = newColor();
+//       console.log(nextColor);
+//       document.body.style.backgroundColor = nextColor;
+//       displayColorCode();
+//     }, 1000);
+//   }
+// }, false);
+
+// document.querySelector('#stop').addEventListener('click', function () {
+//   if (intervalId) {
+//     console.log("stopped.")
+//     clearInterval(intervalId);
+//     intervalId = null;
+//   }
+// }, false);
+
