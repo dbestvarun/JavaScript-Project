@@ -48,7 +48,12 @@ nav a[aria-current='page'] {
   text-align: center;
 }
 
-.hero-content {
+.hero-content h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
+.hero-content p {
   font-size: 1.25rem;
   margin-top: 20px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
