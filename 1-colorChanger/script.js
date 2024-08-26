@@ -6,17 +6,17 @@ const body = document.body;
 buttons.forEach((button) => {
   button.addEventListener('click', (e) => {
     newColor = e.target.id;
-    
+
     body.style.backgroundColor = newColor;
   });
 });
 
 //function to generarte color hexcodes
-const newColor  = function(){
+const newColor = function () {
   const hexaDecimals = "0123456789ABCDEF";
   let colorCode = '#';
-  for(let i=0; i<6; i++){
-    let index = parseInt(Math.random()*16) %16;
+  for (let i = 0; i < 6; i++) {
+    let index = parseInt(Math.random() * 16) % 16;
     colorCode += hexaDecimals[index];
   }
   return colorCode;
@@ -26,8 +26,8 @@ const newColor  = function(){
 let intervalId;
 
 //Event listeners added to the buttons.
-document.querySelector('#start').addEventListener('click',function(){
-  if(!intervalId){
+document.querySelector('#start').addEventListener('click', function () {
+  if (!intervalId) {
     intervalId = setInterval(() => {
       let nextColor = newColor();
       console.log(nextColor);
@@ -36,10 +36,10 @@ document.querySelector('#start').addEventListener('click',function(){
   }
 }, false);
 
-document.querySelector('#stop').addEventListener('click',function(){
-  if(intervalId){
+document.querySelector('#stop').addEventListener('click', function () {
+  if (intervalId) {
     console.log("stopped.")
     clearInterval(intervalId);
     intervalId = null;
   }
-},false);
+}, false);
