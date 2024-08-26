@@ -4,6 +4,8 @@ html {
 
 span {
   display: block;
+  font-size: 22px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .canvas {
   margin: 100px auto 100px;

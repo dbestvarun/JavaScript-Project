@@ -5,9 +5,10 @@ const body = document.body;
 //Event added to the "button" class which changes the background color of the body as the bgColor of that element.
 buttons.forEach((button) => {
   button.addEventListener('click', (e) => {
-    newColor = e.target.id;
+    let buttonColor = e.target.id;
 
-    body.style.backgroundColor = newColor;
+    body.style.backgroundColor = buttonColor;
+    displayColorCode();
   });
 });
 
@@ -22,9 +23,26 @@ const newColor = function () {
   return colorCode;
 }
 
+const whatColor = document.createElement('span');
+document.querySelector('.canvas').appendChild(whatColor);
+
+const displayColorCode = function () {
+  const body = document.body;
+  const style = window.getComputedStyle(body);
+  const backgroundColor = style.backgroundColor;
+
+  // Extract the RGB values using a regular expression
+  const rgbValues = backgroundColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+  
+  
+  // Convert each RGB value to a two-digit hexadecimal number
+  const hexCode = `#${Number(rgbValues[1]).toString(16).padStart(2, '0')}${Number(rgbValues[2]).toString(16).padStart(2, '0')}${Number(rgbValues[3]).toString(16).padStart(2, '0')}`;
+
+  whatColor.innerHTML = `<br> The Code of current background is <b>${hexCode}</b>`;
+};
+
 //variable to hold the reference of setInterval so that it can be used in clearInterval.
 let intervalId;
-
 //Event listeners added to the buttons.
 document.querySelector('#start').addEventListener('click', function () {
   if (!intervalId) {
@@ -32,6 +50,7 @@ document.querySelector('#start').addEventListener('click', function () {
       let nextColor = newColor();
       console.log(nextColor);
       document.body.style.backgroundColor = nextColor;
+      displayColorCode();
     }, 1000);
   }
 }, false);
