@@ -10,7 +10,21 @@ span {
   width: 80%;
   text-align: center;
 }
-
+button {
+  margin-right: 20px;
+  margin-top: 25px;
+  background-color: #424242;
+  color: beige;
+  padding: 15px;
+  border: 6px solid;
+  border-radius: 50%;
+}
+button:hover {
+  background-color: green;
+  color: yellow;
+  border-radius: 25%;
+  transition-duration: 850ms;
+}
 .button {
   width: 100px;
   height: 100px;
