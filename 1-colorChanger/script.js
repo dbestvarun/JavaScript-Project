@@ -6,7 +6,7 @@ const body = document.body;
 buttons.forEach((button) => {
   button.addEventListener('click', (e) => {
     let buttonColor = e.target.id;
-
+    
     body.style.backgroundColor = buttonColor;
     displayColorCode();
   });
@@ -32,16 +32,17 @@ const displayColorCode = function () {
   const body = document.body;
   const style = window.getComputedStyle(body);
   const backgroundColor = style.backgroundColor;
-
+  
   // Extract the RGB values using a regular expression
   const rgbValues = backgroundColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-
-
+  
+  
   // Convert each RGB value to a two-digit hexadecimal number
   const hexCode = `#${Number(rgbValues[1]).toString(16).padStart(2, '0')}${Number(rgbValues[2]).toString(16).padStart(2, '0')}${Number(rgbValues[3]).toString(16).padStart(2, '0')}`;
-
+  
   whatColor.innerHTML = `<br> The Code of current background is <b>${hexCode}</b>`;
 };
+displayColorCode();
 
 //variable to hold the reference of setInterval so that it can be used in clearInterval.
 let intervalId;
