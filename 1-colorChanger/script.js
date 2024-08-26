@@ -23,7 +23,9 @@ const newColor = function () {
   return colorCode;
 }
 
+//creating an Element to display the color.
 const whatColor = document.createElement('span');
+whatColor.classList.add("displayColor");
 document.querySelector('.canvas').appendChild(whatColor);
 
 const displayColorCode = function () {

@@ -5,7 +5,7 @@ html {
 span {
   display: block;
   font-size: 22px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serifˀ;
 }
 .canvas {
   margin: 100px auto 100px;
@@ -49,4 +49,17 @@ button:hover {
 }
 #purple {
   background: purple;
+}
+
+.displayColor {
+  margin: auto;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  width: 50%;
+  background-color: #212121;
+  color: azure;
+  font-weight: 500;
+  font-size: 25px;
+  border: 6px solid whitesmoke;
+  border-radius: 10px;
 }
